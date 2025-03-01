@@ -50,6 +50,18 @@ class _MyHomePageState extends State<MyHomePage> {
               controller: taskinput,
               decoration: InputDecoration(hintText: 'Enter task'),
             ),
+            SizedBox(height: 16),
+            ElevatedButton(onPressed: createtask, child: Text('Create task')),
+            SizedBox(height: 16),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: tasklist.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      title: Text(tasklist[index]['task']),
+                    );
+                  }),
+            ),
           ],
         ),
       ),
