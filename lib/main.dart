@@ -69,8 +69,20 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ListView.builder(
                   itemCount: tasklist.length,
                   itemBuilder: (context, index) {
-                    return ListTile(
-                      title: Text(tasklist[index]['task']),
+                    return Row(
+                      children: [
+                        Checkbox(
+                          value: tasklist[index]['completed'],
+                          onChanged: (_) => completedtask(index),
+                        ),
+                        Expanded(
+                          child: Text(tasklist[index]['task']),
+                        ),
+                        TextButton(
+                          onPressed: () => deletetask(index),
+                          child: Text('Delete'),
+                        ),
+                      ],
                     );
                   }),
             ),
