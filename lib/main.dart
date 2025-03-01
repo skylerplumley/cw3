@@ -10,9 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Task Manager',
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
+      theme: ThemeData(scaffoldBackgroundColor: Colors.pink[50]),
       home: MyHomePage(),
     );
   }
@@ -50,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.pink[50],
+        backgroundColor: Colors.pink[200],
         title: Text('Task Manager'),
       ),
       body: Padding(
