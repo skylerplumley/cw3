@@ -34,6 +34,18 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void deletetask(int index) {
+    setState(() {
+      tasklist.removeAt(index);
+    });
+  }
+
+  void completedtask(int index) {
+    setState(() {
+      tasklist[index]['completed'] = !tasklist[index]['completed'];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
               decoration: InputDecoration(hintText: 'Enter task'),
             ),
             SizedBox(height: 16),
-            ElevatedButton(onPressed: createtask, child: Text('Create task')),
+            ElevatedButton(onPressed: createtask, child: Text('Add')),
             SizedBox(height: 16),
             Expanded(
               child: ListView.builder(
